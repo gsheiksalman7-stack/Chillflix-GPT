@@ -1,6 +1,8 @@
 # Chillflix
   - create react app
   - configured tailwind css
+  - Header
+  - Login form
 
 # Features
  - Login/Sign up form
