@@ -1,11 +1,9 @@
-import './App.css';
+import Body from './Body';
 
 function App() {
   return (
-    <div className="text-3xl font-bold text-green-800">
-     Hello Everyone! Let's Create ChillFlix App
-    </div>
-  );
+   <Body />
+  )
 }
 
 export default App;
