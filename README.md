@@ -28,6 +28,11 @@
   - Embedded the youtube Video and Make it Autoplay and Mute
   - Tailwind Classes to Make Main Container Look Awesome 
   - Build the Secondary Component
+  - Built Movie List
+  - Built Movie Card
+  - Fetching TMDB Image CDN URL
+  - Made The Browser Page Amazing With tailwind CSS
+  - Made UsePopularMovies Custom Hook
 
 # Features
  - Login/Sign up form
@@ -42,7 +47,7 @@
        - Movie lists * N
  - ChillFlix GPT
    - Search Bar
-   -Movie suggestion
+   - Movie suggestion
 
 # Steps for Deployment App
   - install firebase CLI - npm install -g firebase-tools
