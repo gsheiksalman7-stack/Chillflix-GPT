@@ -33,6 +33,9 @@
   - Fetching TMDB Image CDN URL
   - Made The Browser Page Amazing With tailwind CSS
   - Made UsePopularMovies Custom Hook
+  - Created GPT Search page
+  - Created GPT Search Bar
+  - Implemented Multi-Language Feature
 
 # Features
  - Login/Sign up form
