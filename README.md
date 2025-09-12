@@ -36,6 +36,15 @@
   - Created GPT Search page
   - Created GPT Search Bar
   - Implemented Multi-Language Feature
+  - Get Gemini AI Key
+  - Integrating GPT Search API Call
+  - Fetched GPT Movie Suggestions From TMDB
+  - Created GPT Slice Added Data
+  - Reused Movie List Component to Make Movie Suggestion Container
+  - Memoization
+  - Added .env Files
+  - Adding .env Files to Git ignore
+  - Made This Site Responsive
 
 # Features
  - Login/Sign up form
