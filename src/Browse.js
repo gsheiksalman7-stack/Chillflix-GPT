@@ -27,12 +27,6 @@ const Browse = () => {
           <SecondaryContainer />
         </>
       )}
-      {/* Main Component
-       - Video Background
-       - Video Title
-      Secondary Container
-       - MovieList * N
-       - cards * N */}
     </div>
   );
 };

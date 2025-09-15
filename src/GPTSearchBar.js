@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import lang from "./utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { model } from "./utils/openAI ";
@@ -32,16 +32,17 @@ const GPTSearchBar = () => {
     });
     const output = GPTResults.response?.text().split(",");
     if (!output) {
-      //handle error
+
     }
     console.log(output);
 
     const promiseArray = output.map((movie) => searchMovie(movie));
-    const tmdbResults =await Promise.all(promiseArray);
+    const tmdbResults = await Promise.all(promiseArray);
 
     dispatch(
       addGPTMovieResult({ movieNames: output, movieResults: tmdbResults })
     );
+    searchText.current.value = "";
   };
 
   return (

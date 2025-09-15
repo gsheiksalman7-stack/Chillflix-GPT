@@ -7,12 +7,14 @@ import { addUser, removeUser } from "./utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "./utils/constants";
 import { toggleGPTSearchView } from "./utils/gptSlice";
 import { changeLanguage } from "./utils/configSlice";
+import lang from "./utils/languageConstants";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const gptSearch = useSelector((store) => store.gpt.showGPTSearch);
+  const langkey = useSelector((store) => store.lang.lang);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -73,7 +75,7 @@ const Header = () => {
             onClick={handleGPTSearchClick}
             className="py-1 md:py-2 px-2 md:px-4 mx-2 md:mx-4 my-2 bg-red-600 text-white rounded-lg"
           >
-            {gptSearch ? "Home" : "GPT Search"}
+            {gptSearch ? lang[langkey].Home : "GPT Search"}
           </button>
           <img
             className="hidden md:block rounded-lg w-16 mr-3"
@@ -81,7 +83,7 @@ const Header = () => {
             src={user?.photoURL}
           />
           <button onClick={handleSignOut} className="font-bold text-white">
-            Sign Out
+            {lang[langkey].SignOut}
           </button>
         </div>
       )}
