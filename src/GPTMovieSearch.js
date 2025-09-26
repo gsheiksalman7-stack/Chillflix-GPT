@@ -16,7 +16,7 @@ const GPTMovieSearch = () => {
   return (
     <>
       {movieNames && (
-        <div className="p-4 m-4 bg-black text-white bg-opacity-80 font-bold">
+        <div className="p-2 m-2 md:p-4 md:m-4 bg-black text-white bg-opacity-80 font-semibold text-sm md:text-base">
           {movieNames.map((movieName, index) => (
             <MovieList
               key={index}

@@ -3,13 +3,13 @@ const lang = {
     search: "Search",
     Home: "Home",
     gptSearchPlaceHolder: "What would you like to watch today?",
-    SignOut: "Sign Out",
+    SignOut: "SignOut",
   },
   hindi: {
     search: "खोज",
     Home: "पीछे",
     gptSearchPlaceHolder: "आज आप क्या देखना चाहेंगे?",
-    SignOut: "Sign Out",
+    SignOut: "SignOut",
   },
   spanish: {
     search: "buscar",
