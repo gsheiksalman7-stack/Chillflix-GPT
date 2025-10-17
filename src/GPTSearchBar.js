@@ -3,7 +3,8 @@ import lang from "./utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { model } from "./utils/openAI ";
 import { API_OPTIONS } from "./utils/constants";
-import { addGPTMovieResult } from "./utils/gptSlice";
+import { addGPTMovieResult,setLoading } from "./utils/gptSlice";
+import Loading from "./Loading";
 
 const GPTSearchBar = () => {
   const langkey = useSelector((store) => store.lang.lang);
@@ -13,8 +14,8 @@ const GPTSearchBar = () => {
   const searchMovie = async (movie) => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/movie?query=" +
-        movie +
-        "&include_adult=false&language=en-US&page=1",
+      movie +
+      "&include_adult=false&language=en-US&page=1",
       API_OPTIONS
     );
     const json = await data.json();
@@ -22,6 +23,7 @@ const GPTSearchBar = () => {
   };
 
   const handleGPTSearch = async () => {
+    dispatch(setLoading(true))
     const GPTQuery =
       "Act as a Movie Recommendation System and Suggest Some Movies For the Query :" +
       searchText.current.value +
@@ -31,18 +33,21 @@ const GPTSearchBar = () => {
       contents: [{ role: "user", parts: [{ text: GPTQuery }] }],
     });
     const output = GPTResults.response?.text().split(",");
-    if (!output) {
-
+    if (!output || output.length === 0) {
+      console.warn("No movie suggestions received from GPT.");
+      return;
     }
     console.log(output);
 
     const promiseArray = output.map((movie) => searchMovie(movie));
     const tmdbResults = await Promise.all(promiseArray);
+    console.log(tmdbResults)
 
     dispatch(
       addGPTMovieResult({ movieNames: output, movieResults: tmdbResults })
     );
     searchText.current.value = "";
+    dispatch(setLoading(false));
   };
 
   return (
